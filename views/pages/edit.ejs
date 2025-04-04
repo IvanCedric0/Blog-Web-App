@@ -1,0 +1,12 @@
+<h1>Post that u want to edit</h1>
+<h2>post title: <%= post.title %></h2>
+<h2>post content: <%= post.content %></h2>
+<br>
+<br>
+<h1><Em>Update Post</Em></h1>
+
+<form action="/posts/<%= post.id %>?_method=PUT" method="POST">
+    <input type="text" name="title" placeholder="Title">    
+    <input type="text" name="content" placeholder="Content">
+    <input type="submit" value="Save Blog">
+</form>

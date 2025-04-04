@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+<div class="container hero col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-start g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="images/11074129.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 text-center">Welcome to the Blog</h1>
+        <p class="lead text-center">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-center hero-img">
+          <a href="/new" class="btn btn-dark btn-lg px-3" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"></path>
+                </svg>
+                Create Post
+            <a>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container posts text-center">
+        <div class="col-md-12 text-center bg-body-tertiary border rounded-3"> 
+            <% if (posts.length==0) { %>
+                <h3 style="text-align: center;">There are no posts yet</h3>
+                <% } else { %>
+                    <h3 style="text-align: center;padding: 10px;">Posts</h3>
+                    <% posts.forEach(post => { %>
+                        <div class="post" style="padding: 10px;">
+                            <h2 class="post-title"><%= post.title %></h2>
+                            <p class="post-content"><%= post.content.substring(0, 100) %><% if (post.content.length > 100) { %>...<% } %></p>
+                            <div class="post-actions">
+                                <a href="/posts/<%= post.id %>" class="btn"><button>View Post</button></a>
+                                <a href="/posts/<%= post.id %>/edit" class="btn"><button>Edit Post</button></a>
+                                <a href="/posts/<%= post.id %>/delete" class="btn"><button>Delete Post</button></a>
+                            </div>
+                        </div>             
+                    <% }) %>
+                <% } %>
+        </div>
+</div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
