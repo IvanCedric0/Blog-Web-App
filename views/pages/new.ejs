@@ -1,5 +1,30 @@
-<form action="/posts" method="POST">
-    <input type="text" name="title" placeholder="Title">
-    <input type="text" name="content" placeholder="Content">
-    <input type="submit"  value="Save Blog">
-</form>
+<%- include("../partials/header.ejs") %>
+<body id="new-body">
+    <div class="new-container">
+        <div class="new-img">
+            <img src="images/new-photo.png" alt="">
+        </div>
+
+        <form action="/posts" method="POST" class="new-form">
+            <img src="images/new-post-illust.png" alt="" style="width: 100px; height: 70px; align-self: center;" >
+            <h1 class="new-form-title text-center " style="font-size: 3rem; font-weight: bold; color: #d18a7c; margin-bottom: 3rem; font-family: gliker-bold;">Unleash your creativity</h1>
+            <div class="title-grp" style="padding-left: 1rem;">
+                <label for="title" style="font-size: 1.9rem; font-weight: bold; margin-bottom: 1.5rem; font-family: roca-two-thin;">Post Title</label> <br>
+                <input type="text" name="title"  required style="width: 90%; height: 42px; border-radius: 7px; margin-bottom: 2rem;"> <br>
+            </div>
+            
+            <div class="content-grp" style="padding-left: 1rem;">
+               <label for="content" style="font-size: 1.9rem; font-weight: bold; margin-bottom: 1.5rem; font-family: roca-two-thin;">Post Content</label><br>
+                <input type="text" name="content" required style="width: 90%; height: 130px; border-radius: 7px; margin-bottom: 2rem;" ><br> 
+            </div>
+        
+            <input type="submit"  value="Submit" style="width: 89%; margin-left: 1rem; height: 4rem; border-radius: 2rem; border: none; color: white; background-color: #d18a7c; font-size: 2.8rem; font-family: gliker-bold;">
+        </form>
+       
+
+    </div>
+</body>
+
+
+
+
